@@ -1,0 +1,613 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="ihepta">
+    <title>Transition and Animation - ihepta</title>
+    <meta name="author" content="Allen">
+    
+    
+        <link rel="icon" href="http://ihepta.github.io/assets/images/fav.png">
+    
+    
+    <meta name="description" content="css3过渡和动画学习总结。">
+<meta name="keywords" content="css">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Transition and Animation">
+<meta property="og:url" content="http://ihepta.github.io/2017/06/22/transition-and-animation/index.html">
+<meta property="og:site_name" content="ihepta">
+<meta property="og:description" content="css3过渡和动画学习总结。">
+<meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2017-12-18T14:39:58.046Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Transition and Animation">
+<meta name="twitter:description" content="css3过渡和动画学习总结。">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="http://ihepta.github.io/assets/images/author.png"/>
+    
+    
+        <meta property="og:image" content="http://ihepta.github.io/2017/06/22/transition-and-animation/css.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://ihepta.github.io/2017/06/22/transition-and-animation/css.jpg" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">ihepta</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="/">
+        
+        
+            <img class="header-picture" src="/assets/images/author.png" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/author.png" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Allen</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>May there be enough clouds in your life to make a beautiful sunset. </p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="Home"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="Categories"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="Tags"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="Archives"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="About"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/ihepta/" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="mailto:609887115@qq.com" target="_blank" rel="noopener" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-envelope-o" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Transition and Animation
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-06-22T10:02:13+08:00">
+	
+		    Jun 22, 2017
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <!--excerpt--></p>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Transition"><span class="toc-text">Transition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#过渡属性"><span class="toc-text">过渡属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例演示"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Animation"><span class="toc-text">Animation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动画属性"><span class="toc-text">动画属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例演示-1"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两者的区别和联系"><span class="toc-text">两者的区别和联系</span></a></li></ol>
+<p>很早之前就想着总结一下css3的transition和animation，可是一直没有系统地整理过，趁着近来空闲的时间稍作整理记录。</p>
+<h2 id="Transition"><a href="#Transition" class="headerlink" title="Transition"></a>Transition</h2><h3 id="过渡属性"><a href="#过渡属性" class="headerlink" title="过渡属性"></a>过渡属性</h3><ul>
+<li>transition:简写属性，用于在一个属性中设置四个过渡属性。</li>
+<li>transition-property:规定应用过渡的CSS属性的名称，默认是all。</li>
+<li>transition-duration:定义过渡效果花费的时间，默认是0，即不会有过渡的效果。</li>
+<li>transition-timing-function:规定过渡效果的时间曲线，默认是”ease”。</li>
+<li>transition-delay:规定过渡效果何时开始，默认是0，触发即发生过渡。</li>
+</ul>
+<p>以下两者A和B代码效果完全相同：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A:</span><br><span class="line">div&#123;</span><br><span class="line">	transition-property:width;</span><br><span class="line">	transition-duration:1s;</span><br><span class="line">	transition-timing-function:linear;</span><br><span class="line">	transition-delay:2s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">B(简写形式):</span><br><span class="line">div&#123;</span><br><span class="line">	transition:width 1s linear 2s;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实例演示"><a href="#实例演示" class="headerlink" title="实例演示"></a>实例演示</h3><figure class="codeblock codeblock--tabbed"><figcaption><ul class="tabs"><li class="tab active">css</li><li class="tab">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight css" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.div-1</span>{</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>:yellow;</span><br><span class="line">	<span class="attribute">text-align</span>:center;</span><br><span class="line">	<span class="attribute">line-height</span>:<span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">border-radius</span>:<span class="number">10px</span>;</span><br><span class="line">	<span class="attribute">transition</span>:all <span class="number">2s</span>;<span class="comment">/*所有可过渡的属性均在2s内完成*/</span></span><br><span class="line">}</span><br><span class="line"><span class="selector-class">.div-1</span><span class="selector-pseudo">:hover</span>{</span><br><span class="line">	<span class="attribute">width</span>:<span class="number">70px</span>;</span><br><span class="line">	<span class="attribute">height</span>:<span class="number">70px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>:greenyellow;</span><br><span class="line">	<span class="attribute">line-height</span>:<span class="number">70px</span>;</span><br><span class="line">	<span class="attribute">border-radius</span>:<span class="number">35px</span>;</span><br><span class="line">	<span class="attribute">transform</span>:<span class="built_in">rotate</span>(360deg);</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><figure class="highlight html" style="display: none;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"div-1"</span>&gt;</span>hover me<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure>
+
+<style>
+	.div-1{
+		width:50px;
+		height:50px;
+		background-color:yellow;
+		text-align:center;
+		line-height:50px;
+		border-radius:10px;
+		transition:all 2s;
+	}
+	.div-1:hover{
+		width:70px;
+		height:70px;
+		background-color:greenyellow;
+		line-height:70px;
+		border-radius:35px;
+		transform:rotate(360deg);
+	}
+    .animation{
+        position: relative;
+        width: 50px;
+        height:50px;
+        border-radius: 10px;
+        background-color: deepskyblue;
+        animation: myAnimation 4s infinite;
+        animation-fill-mode: none;
+    }
+    @keyframes myAnimation {
+        0%{
+            left:0;
+            background-color: deepskyblue;
+        }
+        50%{
+            left:300px;
+            background-color: lightcoral;
+            transform: rotate(30deg);
+        }
+        100%{
+            left:0;
+            background-color: deepskyblue;
+            transform: rotate(-360deg);
+        }
+    }
+</style>
+
+<div class="div-1">hover</div>
+
+<h2 id="Animation"><a href="#Animation" class="headerlink" title="Animation"></a>Animation</h2><h3 id="动画属性"><a href="#动画属性" class="headerlink" title="动画属性"></a>动画属性</h3><ul>
+<li>@keyframes:规定动画，以百分比来规定改变发生的时间，或者通过关键词”from”和”to”，等价于0%和100%，尽量采用百分比的形式。</li>
+<li>animation:所有动画属性的简写形式，除了animation-play-state属性。</li>
+<li>animation-name:规定@keyframes动画的名称，默认none。</li>
+<li>animation-duration:规定动画完成一个周期所花费的秒或毫秒，默认是0。</li>
+<li>animation-timing-function:规定动画的速度曲线，默认是”ease”。</li>
+<li>animation-delay:规定动画何时开始，默认是0。</li>
+<li>animation-iteration-count:规定动画播放的次数，可以设置为n或infinite，默认是1。</li>
+<li>animation-direction:规定动画是否在下一个周期逆向地播放，可以设置为”alternate”即奇数次正常播放，偶数次逆向播放，默认是”normal”。</li>
+<li>animation-play-state:规定动画是否正在运行或暂停，可以设置为”paused”让动画暂停，大多在js中动态控制动画运行或暂停，默认是”running”。</li>
+<li>animation-fill-mode:规定对象动画时间之外的状态，可选forwards(当动画完成之后保持最后一个属性值，即在最后一个关键帧中定义的属性)、backwards(在animation-delay所指定的一段时间内，在动画显示之前，应用开始属性值，即在第一个关键帧中定义的属性)、both(向前和向后填充模式都被应用)，默认none。</li>
+</ul>
+<p>以下两者A和B代码效果完全相同：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">A:</span><br><span class="line">div&#123;</span><br><span class="line">	animation-name: myAnimation;</span><br><span class="line">	animation-duration: 5s;</span><br><span class="line">	animation-timing-function: linear;</span><br><span class="line">	animation-delay: 2s;</span><br><span class="line">	animation-iteration-count: infinite;</span><br><span class="line">	animation-direction: alternate;</span><br><span class="line">	animation-play-state: running;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">B(简写形式):</span><br><span class="line">div&#123;</span><br><span class="line">	animation: myAnimation 5s linear 2s infinite alternate;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="实例演示-1"><a href="#实例演示-1" class="headerlink" title="实例演示"></a>实例演示</h3><figure class="codeblock codeblock--tabbed"><figcaption><ul class="tabs"><li class="tab active">css</li><li class="tab">html</li></ul></figcaption><div class="tabs-content"><figure class="highlight css" style="display: block;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.animation</span>{</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">height</span>:<span class="number">50px</span>;</span><br><span class="line">    <span class="attribute">border-radius</span>: <span class="number">10px</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: deepskyblue;</span><br><span class="line">    <span class="attribute">animation</span>: myAnimation <span class="number">4s</span> infinite;</span><br><span class="line">    <span class="attribute">animation-fill-mode</span>: none;</span><br><span class="line">}</span><br><span class="line">@<span class="keyword">keyframes</span> myAnimation {</span><br><span class="line">    0%{</span><br><span class="line">        <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: deepskyblue;</span><br><span class="line">    }</span><br><span class="line">    50%{</span><br><span class="line">        <span class="attribute">left</span>:<span class="number">300px</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: lightcoral;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(30deg);</span><br><span class="line">    }</span><br><span class="line">    100%{</span><br><span class="line">        <span class="attribute">left</span>:<span class="number">0</span>;</span><br><span class="line">        <span class="attribute">background-color</span>: deepskyblue;</span><br><span class="line">        <span class="attribute">transform</span>: <span class="built_in">rotate</span>(-360deg);</span><br><span class="line">    }</span><br><span class="line">}</span><br></pre></td></tr></tbody></table></figure><figure class="highlight html" style="display: none;"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"animation"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></tbody></table></figure></div></figure>
+<div class="animation"></div>
+
+<h2 id="两者的区别和联系"><a href="#两者的区别和联系" class="headerlink" title="两者的区别和联系"></a>两者的区别和联系</h2><p>经常碰到两个相似的东西的时候，我们常常会想，这两个东西到底有什么关系，又有什么联系呢？下面引用一段知乎上看到的回答来阐述这个疑问。</p>
+<div class="alert info no-icon"><p>transition关注的是CSS property的变化，property值和时间的关系是一个三次贝塞尔曲线。<br>animation作用于元素本身而不是样式属性，可以使用关键帧的概念，应该说可以实现更自由的动画效果。至于实现动画效果用哪一种，我的感觉是要看应用场景，但很多情况下transition更简单实用些。</p>
+<p>作者：施伟伟<br>链接：<a href="https://www.zhihu.com/question/19749045/answer/13016286" target="_blank" rel="noopener">https://www.zhihu.com/question/19749045/answer/13016286</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+</div>
+<p>以下结论摘自《HTML5与CSS3设计模式》:<br><div class="alert info no-icon"><p>CSS过渡规范允许CSS属性值在指定时间间隔中平滑地变化。通常，当CSS属性值改变时，渲染结果会立刻更新，如果使用CSS过渡，我们就能够从旧状态慢慢平滑地变化到新状态。<br>CSS动画与过渡类似，也是逐渐修改CSS属性的表现值。<br>它们的主要区别在于，过渡是在属性值发生变化时自动触发，而动画则需要在动画属性生效时显式地执行。因此，动画需要显式设置动画属性的值。这些值由关键帧指定。<br>—-《HTML5与CSS3设计模式》</p>
+</div></p>
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/css/">css</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/09/06/centering-in-css/" data-tooltip="Centering in Css" aria-label="PREVIOUS: Centering in Css">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/12/cross-origin-summarization/" data-tooltip="Cross-origin Summarization" aria-label="NEXT: Cross-origin Summarization">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://ihepta.github.io/2017/06/22/transition-and-animation/" title="Share on Facebook">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://ihepta.github.io/2017/06/22/transition-and-animation/" title="Share on Twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://ihepta.github.io/2017/06/22/transition-and-animation/" title="Share on Google+">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://ihepta.github.io/2017/06/22/transition-and-animation/" title="Share on Weibo">
+                    <i class="fa fa-weibo" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ihepta.github.io/2017/06/22/transition-and-animation/&amp;title=Transition and Animation" title="Share on QQ">
+                    <i class="fa fa-qq" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 Allen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/09/06/centering-in-css/" data-tooltip="Centering in Css" aria-label="PREVIOUS: Centering in Css">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/12/cross-origin-summarization/" data-tooltip="Cross-origin Summarization" aria-label="NEXT: Cross-origin Summarization">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://ihepta.github.io/2017/06/22/transition-and-animation/" title="Share on Facebook">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://ihepta.github.io/2017/06/22/transition-and-animation/" title="Share on Twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://ihepta.github.io/2017/06/22/transition-and-animation/" title="Share on Google+">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://ihepta.github.io/2017/06/22/transition-and-animation/" title="Share on Weibo">
+                    <i class="fa fa-weibo" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ihepta.github.io/2017/06/22/transition-and-animation/&amp;title=Transition and Animation" title="Share on QQ">
+                    <i class="fa fa-qq" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://ihepta.github.io/2017/06/22/transition-and-animation/">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://ihepta.github.io/2017/06/22/transition-and-animation/">
+                    <i class="fa fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://ihepta.github.io/2017/06/22/transition-and-animation/">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://ihepta.github.io/2017/06/22/transition-and-animation/">
+                    <i class="fa fa-weibo" aria-hidden="true"></i><span>Share on Weibo</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ihepta.github.io/2017/06/22/transition-and-animation/&amp;title=Transition and Animation">
+                    <i class="fa fa-qq" aria-hidden="true"></i><span>Share on QQ</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/author.png" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Allen</h4>
+        
+            <div id="about-card-bio"><p>May there be enough clouds in your life to make a beautiful sunset. </p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Web Developer</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Hangzhou,Zhejiang
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/girl.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>

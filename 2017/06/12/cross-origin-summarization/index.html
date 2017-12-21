@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="generator" content="ihepta">
+    <title>Cross-origin Summarization - ihepta</title>
+    <meta name="author" content="Allen">
+    
+    
+        <link rel="icon" href="http://ihepta.github.io/assets/images/fav.png">
+    
+    
+    <meta name="description" content="跨域问题总结。">
+<meta name="keywords" content="cross-origin">
+<meta property="og:type" content="blog">
+<meta property="og:title" content="Cross-origin Summarization">
+<meta property="og:url" content="http://ihepta.github.io/2017/06/12/cross-origin-summarization/index.html">
+<meta property="og:site_name" content="ihepta">
+<meta property="og:description" content="跨域问题总结。">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://ihepta.github.io/2017/06/12/cross-origin-summarization/nginx.jpg">
+<meta property="og:updated_time" content="2017-12-18T14:39:58.045Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cross-origin Summarization">
+<meta name="twitter:description" content="跨域问题总结。">
+<meta name="twitter:image" content="http://ihepta.github.io/2017/06/12/cross-origin-summarization/nginx.jpg">
+    
+    
+        
+    
+    
+        <meta property="og:image" content="http://ihepta.github.io/assets/images/author.png"/>
+    
+    
+        <meta property="og:image" content="http://ihepta.github.io/2017/06/12/cross-origin-summarization/nginx.jpg"/>
+        <meta class="swiftype" name="image" data-type="enum" content="http://ihepta.github.io/2017/06/12/cross-origin-summarization/nginx.jpg" />
+    
+    
+    
+    <!--STYLES-->
+    <link rel="stylesheet" href="/assets/css/font-awesome.css">
+    <link rel="stylesheet" href="/assets/css/jquery.fancybox.css">
+    <link rel="stylesheet" href="/assets/css/thumbs.css">
+    <link rel="stylesheet" href="/assets/css/tranquilpeak.css">
+    <!--STYLES END-->
+    
+
+    
+</head>
+
+    <body>
+        <div id="blog">
+            <!-- Define author's picture -->
+
+
+    
+        
+            
+        
+    
+
+<header id="header" data-behavior="4">
+    <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+    <div class="header-title">
+        <a class="header-title-link" href="/ ">ihepta</a>
+    </div>
+    
+        
+            <a  class="header-right-picture "
+                href="/">
+        
+        
+            <img class="header-picture" src="/assets/images/author.png" alt="Author&#39;s picture"/>
+        
+        </a>
+    
+</header>
+
+            <!-- Define author's picture -->
+
+
+
+        
+    
+
+<nav id="sidebar" data-behavior="4">
+    <div class="sidebar-container">
+        
+            <div class="sidebar-profile">
+                <a href="/#about">
+                    <img class="sidebar-profile-picture" src="/assets/images/author.png" alt="Author&#39;s picture"/>
+                </a>
+                <h4 class="sidebar-profile-name">Allen</h4>
+                
+                    <h5 class="sidebar-profile-bio"><p>May there be enough clouds in your life to make a beautiful sunset. </p>
+</h5>
+                
+            </div>
+        
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/ "
+                            
+                            title="Home"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-home" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Home</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-categories"
+                            
+                            title="Categories"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-bookmark" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Categories</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-tags"
+                            
+                            title="Tags"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-tags" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Tags</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="/all-archives"
+                            
+                            title="Archives"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-archive" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Archives</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link "
+                             href="#about"
+                            
+                            title="About"
+                        >
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-question" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">About</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+            <ul class="sidebar-buttons">
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="https://github.com/ihepta/" target="_blank" rel="noopener" title="GitHub">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-github" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">GitHub</span>
+                    </a>
+            </li>
+            
+                <li class="sidebar-button">
+                    
+                        <a  class="sidebar-button-link " href="mailto:609887115@qq.com" target="_blank" rel="noopener" title="Mail">
+                    
+                        <i class="sidebar-button-icon fa fa-lg fa-envelope-o" aria-hidden="true"></i>
+                        <span class="sidebar-button-desc">Mail</span>
+                    </a>
+            </li>
+            
+        </ul>
+        
+    </div>
+</nav>
+
+            
+            <div id="main" data-behavior="4"
+                 class="
+                        hasCoverMetaIn
+                        ">
+                
+<article class="post" itemscope itemType="http://schema.org/BlogPosting">
+    
+    
+        <div class="post-header main-content-wrap text-left">
+    
+        <h1 class="post-title" itemprop="headline">
+            Cross-origin Summarization
+        </h1>
+    
+    
+        <div class="post-meta">
+    <time itemprop="datePublished" datetime="2017-06-12T11:12:51+08:00">
+	
+		    Jun 12, 2017
+    	
+    </time>
+    
+</div>
+
+    
+</div>
+    
+    <div class="post-content markdown" itemprop="articleBody">
+        <div class="main-content-wrap">
+            <!--excerpt--></p>
+<p>跨域是一个时常出现在程序员工作当中的问题。前两天正好小组也对该主题进行了一番探讨，在此结合业内大牛的知识分享做一下个人的总结。</p>
+<h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#XSS"><span class="toc-text">XSS</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#协议层实现跨域"><span class="toc-text">协议层实现跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#CSP"><span class="toc-text">CSP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CORS"><span class="toc-text">CORS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#WebSocket"><span class="toc-text">WebSocket</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#小技巧方法实现跨域"><span class="toc-text">小技巧方法实现跨域</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#jsonp"><span class="toc-text">jsonp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#片段识别符"><span class="toc-text">片段识别符</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-domain"><span class="toc-text">window.domain</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-name"><span class="toc-text">window.name</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#window-postMessage"><span class="toc-text">window.postMessage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#利用iframe实现跨域"><span class="toc-text">利用iframe实现跨域</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#nginx反向代理实现跨域"><span class="toc-text">nginx反向代理实现跨域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参考资料"><span class="toc-text">参考资料</span></a></li></ol>
+<h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p><a href="https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet" target="_blank" rel="noopener">XSS(跨站脚本攻击)</a>就是很好地利用了script脚本可以跨域的特性来进行恶意攻击。<br>假如你的站点没有设立预防XSS漏洞的固定方法，那么很有可能存在XSS漏洞，XSS攻击经常发生在一些公共板块，比如留言板、评论区。</p>
+<ol>
+<li><p>比如恶意用户在网站留言区输入以下代码：</p>
+<blockquote>
+<p><code>&lt;script scr=&quot;www.xxx.com/xss.js&quot;&gt;&lt;/script&gt;</code></p>
+</blockquote>
+</li>
+<li><p>其他用户或管理员访问该页面的时候 <code>xss.js</code> 就会自动执行</p>
+</li>
+<li>通过 <code>xss.js</code> 可以很方便地获取用户的cookies等敏感信息造成信息泄露。</li>
+</ol>
+<h2 id="协议层实现跨域"><a href="#协议层实现跨域" class="headerlink" title="协议层实现跨域"></a>协议层实现跨域</h2><h3 id="CSP"><a href="#CSP" class="headerlink" title="CSP"></a>CSP</h3><p><a href="https://content-security-policy.com/" target="_blank" rel="noopener">CSP(Content Security Policy)</a>通过http响应头来定义网页自身能够访问哪些域和哪些资源，可减少XSS的发生，<em>不过不支持全部浏览器是它的硬伤</em>。以script为例：</p>
+<blockquote>
+<p><code>Content-Security-Policy: script-src &#39;self&#39; https://example.com</code></p>
+</blockquote>
+<p>这么写表示浏览器只会加载并执行本域和<code>https://example.com</code>的脚本。同样的，还有<code>img-src</code>、<code>style-src</code>、<code>font-src</code>等等。</p>
+<h3 id="CORS"><a href="#CORS" class="headerlink" title="CORS"></a>CORS</h3><p><a href="https://en.wikipedia.org/wiki/Cross-origin_resource_sharing" target="_blank" rel="noopener">CORS(Cross Origin Resource Sharing)</a>跨域资源共享定义的是一个网页如何才能访问被同源策略禁止的跨域资源，规定了两者交互的协议和方式。<em>浏览器版本需要 IE &gt;= 10</em>。<br>CORS请求分为简单请求和非简单请求，具体解释请移步<a href="http://www.ruanyifeng.com/blog/2016/04/cors.html" target="_blank" rel="noopener">跨域资源共享 CORS 详解</a>。<br>其最重要的是在请求头信息中增加<code>Origin</code>字段，服务器接收到请求之后判断该Origin是否在许可范围内，如果是则在响应头信息中添加<code>Access-Control-Allow-Origin</code>字段，允许跨域请求。</p>
+<blockquote>
+<p>JSONP只支持GET请求，CORS支持所有类型的HTTP请求。JSONP的优势在于支持老式浏览器，以及可以向不支持CORS的网站请求数据。<br>                                       —阮一峰的网络日志</p>
+</blockquote>
+<h3 id="WebSocket"><a href="#WebSocket" class="headerlink" title="WebSocket"></a>WebSocket</h3><p>WebSocket是一种通信协议，使用ws://（非加密）和wss://（加密）作为协议前缀。该协议不实行同源政策，只要服务器支持，就可以通过它进行跨源通信。其原理同CORS，在请求头中添加<code>Origin</code>字段，服务器可根据这个字段来判断该域名是否在白名单内，做出不同的请求响应。</p>
+<h2 id="小技巧方法实现跨域"><a href="#小技巧方法实现跨域" class="headerlink" title="小技巧方法实现跨域"></a>小技巧方法实现跨域</h2><h3 id="jsonp"><a href="#jsonp" class="headerlink" title="jsonp"></a>jsonp</h3><p>jsonp充分利用了页面上script标签src引用可以跨域的特性，通过返回一个可执行的js文件达到跨域请求的目的。<br>如果页面引用了jquery，则可以很方便地使用它封装的方法来进行jsonp操作：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	$.getJSON(&apos;http://example.com/data.php?callback=?&apos;,function(jsonData)&#123;</span><br><span class="line">		//do something</span><br><span class="line">	&#125;);</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>jquery会自动生成一个全局函数来替换<code>callback=?</code>中的问号，实际上就是起一个临时代理函数的作用。$.getJSON方法会自动判断是否跨域，不跨域的话就调用普通的ajax方法；跨域的话则会以异步加载js文件的形式来调用jsonp的回调函数。</p>
+<h3 id="片段识别符"><a href="#片段识别符" class="headerlink" title="片段识别符"></a>片段识别符</h3><p>片段标识符（fragment identifier）指的是，URL的#号后面的部分，比如<code>http://example.com/x.html#fragment</code>的<code>#fragment</code>。如果只是改变片段标识符，页面不会重新刷新。</p>
+<ol>
+<li><p>父窗口可以通过把信息写入子窗口的片段标识符来达到传递信息的目的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var src = originURL + &apos;#&apos; + data;</span><br><span class="line">document.getElementById(&apos;iframe&apos;).src = src;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>子窗口通过监听hashchange事件得到通知。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.onhashchange = checkMessage;</span><br><span class="line">function checkMessage() &#123;</span><br><span class="line">  var message = window.location.hash;</span><br><span class="line">  // do something</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="window-domain"><a href="#window-domain" class="headerlink" title="window.domain"></a>window.domain</h3><p>修改document.domain的方法只适用于<em>同主域不同子域</em>的框架间的交互，也可以共享cookies，不适用于通过ajax的方法与不同子域的页面交互。只能把document.domain设置成自身或更高一级的父域，且主域必须相同。<br>比如两个都在<code>example.com</code>主域下的页面<code>a.example.com/a.html</code>和嵌入在<code>a.html</code>的iframe中的<code>b.example.com/b.html</code>需要相互通信，直接在<code>a.html</code>中使用<code>document.getElementById(&#39;iframe&#39;).contentWindow</code>虽然可以获取到iframe里面的window对象，但是该window对象的属性和方法几乎是不可用的。<br>需要同时在两个页面指定<code>document.domain</code>，即<code>document.domain = &#39;example.com&#39;</code>，这样就能在<code>a.html</code>页面获取到<code>b.html</code>页面的属性和方法。</p>
+<h3 id="window-name"><a href="#window-name" class="headerlink" title="window.name"></a>window.name</h3><p>浏览器窗口有window.name属性。这个属性的最大特点是，<em>无论是否同源</em>，只要在同一个窗口里，前一个网页设置了这个属性，后一个网页可以读取它。例如，<code>www.example1.com/a.html</code>需要获取<code>www.example2.com/b.html</code>中的<code>data</code>，可以这么做：</p>
+<ol>
+<li>在<code>a.html</code>中创建一个隐藏的iframe，src指向<code>b.html</code>；</li>
+<li><code>b.html</code>通过js设置<code>window.name = data</code>；</li>
+<li>设置iframe的src指向一个和<code>a.html</code>同域的页面<code>www.example1.com/c.html</code></li>
+<li><code>a.html</code>可以访问同域的ifram页面<code>c.html</code>，获取里面的<code>data</code>。</li>
+</ol>
+<h3 id="window-postMessage"><a href="#window-postMessage" class="headerlink" title="window.postMessage"></a>window.postMessage</h3><p>HTML5为了解决跨域问题，引入了一个全新的API：跨文档通信 API(Cross-document messaging)。<em>浏览器支持 IE &gt;= 8</em>。方法为<code>window.postMessage(message,targetOrigin)</code>，调用postMessage方法的window对象是指要接收消息的那一个window对象，该方法的第一个参数message为要发送的消息，类型只能为字符串；第二个参数targetOrigin用来限定接收消息的那个window对象所在的域，如果不想限定域，可以使用通配符 *  。<br>比如<code>www.example1.com/a.html</code>要向它的内部的iframe子页面<code>www.example2.com/b.html</code>发送消息，则可以这样来做：</p>
+<ol>
+<li><p>在<code>a.html</code>页面可以这样发送消息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">function onload()&#123;</span><br><span class="line">	var iframe = document.getElementById(&apos;iframe&apos;);</span><br><span class="line">	var win = iframe.contentWindow;//获取目标window对象</span><br><span class="line">	win.postMessage(&apos;你好！&apos;,&apos;*&apos;);//向目标window发送消息</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;iframe id=&quot;iframe&quot; src=&quot;http://www.example2.com/b.html&quot; onload=&quot;onload()&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<code>b.html</code>页面可以这样接收消息：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">window.onmessage = function(e)&#123;</span><br><span class="line">	e = e || event;</span><br><span class="line">	alert(e.source);//发送消息的窗口</span><br><span class="line">	alert(e.origin);//消息发向的网址</span><br><span class="line">	alert(e.data);//消息内容</span><br><span class="line">&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="利用iframe实现跨域"><a href="#利用iframe实现跨域" class="headerlink" title="利用iframe实现跨域"></a>利用iframe实现跨域</h3><p>假如www.domainA.com/a.html下有个iframe标签，src指向www.domainB.com/b.html,因为a.html和b.html不在同一个域，所以a.html无法直接调用b.html页面的方法，此时可以在调用方法的时候动态创建一个和b.html在同一个域的页面executB.html，利用executB.html加载的时候执行executB.html页面的方法来间接调用b.html的方法。举个栗子：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8081/a.html:</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;A&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;button onclick=&quot;executB();&quot;&gt;执行B页面方法&lt;/button&gt;</span><br><span class="line">    &lt;iframe name=&quot;biframe&quot; src=&quot;http://localhost:8082/b.html&quot;&gt;&lt;/iframe&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    function main()&#123;</span><br><span class="line">        alert(&apos;msg from A&apos;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    var executobj;</span><br><span class="line">    function executB()&#123;</span><br><span class="line">        if(typeof executobj == &apos;undefined&apos;)&#123;</span><br><span class="line">            executobj = document.createElement(&apos;iframe&apos;);</span><br><span class="line">            executobj.src = &apos;http://localhost:8082/executB.html&apos;;</span><br><span class="line">            executobj.style.display = &apos;none&apos;;</span><br><span class="line">            document.body.appendChild(executobj);</span><br><span class="line">        &#125;else&#123;</span><br><span class="line">            executobj.src = &apos;http://localhost:8082/executB.html?&apos;+Math.random();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8082/b.html:</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;B&lt;/title&gt;</span><br><span class="line">    &lt;style&gt;</span><br><span class="line">        body&#123;</span><br><span class="line">            background-color: aqua;</span><br><span class="line">        &#125;</span><br><span class="line">    &lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    function main()&#123;</span><br><span class="line">        alert(&apos;msg from B&apos;);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">http://localhost:8082/executB.html:</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=&quot;en&quot;&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=&quot;UTF-8&quot;&gt;</span><br><span class="line">    &lt;title&gt;executB&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    parent.window.biframe.main();</span><br><span class="line">&lt;/script&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="nginx反向代理实现跨域"><a href="#nginx反向代理实现跨域" class="headerlink" title="nginx反向代理实现跨域"></a>nginx反向代理实现跨域</h2><p>这种方法不需要目标服务器的配合，只需要搭建一台中转nginx服务器，用于转发请求。由页面请求一个本域的地址，转由nginx代理处理之后转发获取请求结果返回给页面。<br><img src="nginx.jpg" alt="nginx反向代理示意图"></p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.ruanyifeng.com/blog/2016/04/same-origin-policy.html" target="_blank" rel="noopener">阮一峰的网络日志</a><br><a href="https://imququ.com/post/content-security-policy-reference.html" target="_blank" rel="noopener">Jerry Qu’s Blog</a><br><a href="http://www.cnblogs.com/2050/p/3191744.html" target="_blank" rel="noopener">无双的Bolg</a></p>
+            
+
+        </div>
+    </div>
+    <div id="post-footer" class="post-footer main-content-wrap">
+        
+            <div class="post-footer-tags">
+                <span class="text-color-light text-small">TAGGED IN</span><br/>
+                
+    <a class="tag tag--primary tag--small t-link" href="/tags/cross-origin/">cross-origin</a>
+
+            </div>
+        
+        
+            <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/22/transition-and-animation/" data-tooltip="Transition and Animation" aria-label="PREVIOUS: Transition and Animation">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/09/git-commands-used-commonly/" data-tooltip="Git commands used commonly" aria-label="NEXT: Git commands used commonly">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://ihepta.github.io/2017/06/12/cross-origin-summarization/" title="Share on Facebook">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://ihepta.github.io/2017/06/12/cross-origin-summarization/" title="Share on Twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://ihepta.github.io/2017/06/12/cross-origin-summarization/" title="Share on Google+">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://ihepta.github.io/2017/06/12/cross-origin-summarization/" title="Share on Weibo">
+                    <i class="fa fa-weibo" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ihepta.github.io/2017/06/12/cross-origin-summarization/&amp;title=Cross-origin Summarization" title="Share on QQ">
+                    <i class="fa fa-qq" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+        
+        
+            
+        
+    </div>
+</article>
+
+
+
+                <footer id="footer" class="main-content-wrap">
+    <span class="copyrights">
+        Copyrights &copy; 2017 Allen. All Rights Reserved.
+    </span>
+</footer>
+
+            </div>
+            
+                <div id="bottom-bar" class="post-bottom-bar" data-behavior="4">
+                    <div class="post-actions-wrap">
+    <nav>
+        <ul class="post-actions post-action-nav">
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/22/transition-and-animation/" data-tooltip="Transition and Animation" aria-label="PREVIOUS: Transition and Animation">
+                
+                    <i class="fa fa-angle-left" aria-hidden="true"></i>
+                    <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+                
+                    
+                    <a class="post-action-btn btn btn--default tooltip--top" href="/2017/06/09/git-commands-used-commonly/" data-tooltip="Git commands used commonly" aria-label="NEXT: Git commands used commonly">
+                
+                    <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                    <i class="fa fa-angle-right" aria-hidden="true"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <ul class="post-actions post-action-share">
+        <li class="post-action hide-lg hide-md hide-sm">
+            <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions" aria-label="Share this post">
+                <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </a>
+        </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://ihepta.github.io/2017/06/12/cross-origin-summarization/" title="Share on Facebook">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=http://ihepta.github.io/2017/06/12/cross-origin-summarization/" title="Share on Twitter">
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="https://plus.google.com/share?url=http://ihepta.github.io/2017/06/12/cross-origin-summarization/" title="Share on Google+">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://ihepta.github.io/2017/06/12/cross-origin-summarization/" title="Share on Weibo">
+                    <i class="fa fa-weibo" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+            
+            
+            <li class="post-action hide-xs">
+                <a class="post-action-btn btn btn--default" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ihepta.github.io/2017/06/12/cross-origin-summarization/&amp;title=Cross-origin Summarization" title="Share on QQ">
+                    <i class="fa fa-qq" aria-hidden="true"></i>
+                </a>
+            </li>
+        
+        
+            
+        
+        <li class="post-action">
+            
+                <a class="post-action-btn btn btn--default" href="#table-of-contents" aria-label="Table of Contents">
+            
+                <i class="fa fa-list" aria-hidden="true"></i>
+            </a>
+        </li>
+    </ul>
+</div>
+
+
+                </div>
+                <div id="share-options-bar" class="share-options-bar" data-behavior="4">
+    <i id="btn-close-shareoptions" class="fa fa-close"></i>
+    <ul class="share-options">
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=http://ihepta.github.io/2017/06/12/cross-origin-summarization/">
+                    <i class="fa fa-facebook-official" aria-hidden="true"></i><span>Share on Facebook</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=http://ihepta.github.io/2017/06/12/cross-origin-summarization/">
+                    <i class="fa fa-twitter" aria-hidden="true"></i><span>Share on Twitter</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="https://plus.google.com/share?url=http://ihepta.github.io/2017/06/12/cross-origin-summarization/">
+                    <i class="fa fa-google-plus" aria-hidden="true"></i><span>Share on Google+</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://service.weibo.com/share/share.php?&amp;title=http://ihepta.github.io/2017/06/12/cross-origin-summarization/">
+                    <i class="fa fa-weibo" aria-hidden="true"></i><span>Share on Weibo</span>
+                </a>
+            </li>
+        
+            
+            
+            <li class="share-option">
+                <a class="share-option-btn" target="new" href="http://connect.qq.com/widget/shareqq/index.html?url=http://ihepta.github.io/2017/06/12/cross-origin-summarization/&amp;title=Cross-origin Summarization">
+                    <i class="fa fa-qq" aria-hidden="true"></i><span>Share on QQ</span>
+                </a>
+            </li>
+        
+    </ul>
+</div>
+
+            
+        </div>
+        
+
+
+    
+        
+    
+
+<div id="about">
+    <div id="about-card">
+        <div id="about-btn-close">
+            <i class="fa fa-remove"></i>
+        </div>
+        
+            <img id="about-card-picture" src="/assets/images/author.png" alt="Author&#39;s picture"/>
+        
+            <h4 id="about-card-name">Allen</h4>
+        
+            <div id="about-card-bio"><p>May there be enough clouds in your life to make a beautiful sunset. </p>
+</div>
+        
+        
+            <div id="about-card-job">
+                <i class="fa fa-briefcase"></i>
+                <br/>
+                <p>Web Developer</p>
+
+            </div>
+        
+        
+            <div id="about-card-location">
+                <i class="fa fa-map-marker"></i>
+                <br/>
+                Hangzhou,Zhejiang
+            </div>
+        
+    </div>
+</div>
+
+        
+        
+<div id="cover" style="background-image:url('/assets/images/girl.jpg');"></div>
+        <!--SCRIPTS-->
+<script src="/assets/js/jquery.js"></script>
+<script src="/assets/js/jquery.fancybox.js"></script>
+<script src="/assets/js/thumbs.js"></script>
+<script src="/assets/js/tranquilpeak.js"></script>
+<!--SCRIPTS END-->
+
+    
+
+
+
+    </body>
+</html>
