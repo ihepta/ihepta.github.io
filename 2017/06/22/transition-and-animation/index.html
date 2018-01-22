@@ -21,7 +21,7 @@
 <meta property="og:site_name" content="ihepta">
 <meta property="og:description" content="css3过渡和动画学习总结。">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2017-12-18T14:39:58.046Z">
+<meta property="og:updated_time" content="2018-01-22T12:01:58.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Transition and Animation">
 <meta name="twitter:description" content="css3过渡和动画学习总结。">
@@ -225,7 +225,7 @@
         <div class="main-content-wrap">
             <!--excerpt--></p>
 <h1 id="table-of-contents">Table of Contents</h1><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Transition"><span class="toc-text">Transition</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#过渡属性"><span class="toc-text">过渡属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例演示"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Animation"><span class="toc-text">Animation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#动画属性"><span class="toc-text">动画属性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#实例演示-1"><span class="toc-text">实例演示</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#两者的区别和联系"><span class="toc-text">两者的区别和联系</span></a></li></ol>
-<p>很早之前就想着总结一下css3的transition和animation，可是一直没有系统地整理过，趁着近来空闲的时间稍作整理记录。</p>
+<p>很早之前就想着总结一下css3的transition和animation，可是一直没有系统地整理过，趁着近来空闲的时间稍作整理记录。同时，结合两者做了一个简单的双人射击小游戏：）<a href="https://github.com/ihepta/css3-game-demo" target="_blank" rel="noopener">点击进入github地址</a></p>
 <h2 id="Transition"><a href="#Transition" class="headerlink" title="Transition"></a>Transition</h2><h3 id="过渡属性"><a href="#过渡属性" class="headerlink" title="过渡属性"></a>过渡属性</h3><ul>
 <li>transition:简写属性，用于在一个属性中设置四个过渡属性。</li>
 <li>transition-property:规定应用过渡的CSS属性的名称，默认是all。</li>
@@ -255,31 +255,31 @@
 		border-radius:35px;
 		transform:rotate(360deg);
 	}
-    .animation{
-        position: relative;
-        width: 50px;
-        height:50px;
-        border-radius: 10px;
-        background-color: deepskyblue;
-        animation: myAnimation 4s infinite;
-        animation-fill-mode: none;
-    }
-    @keyframes myAnimation {
-        0%{
-            left:0;
-            background-color: deepskyblue;
-        }
-        50%{
-            left:300px;
-            background-color: lightcoral;
-            transform: rotate(30deg);
-        }
-        100%{
-            left:0;
-            background-color: deepskyblue;
-            transform: rotate(-360deg);
-        }
-    }
+	.animation{
+	    position: relative;
+	    width: 50px;
+	    height:50px;
+	    border-radius: 10px;
+	    background-color: deepskyblue;
+	    animation: myAnimation 4s infinite;
+	    animation-fill-mode: none;
+	}
+	@keyframes myAnimation {
+	    0%{
+	        left:0;
+	        background-color: deepskyblue;
+	    }
+	    50%{
+	        left:300px;
+	        background-color: lightcoral;
+	        transform: rotate(30deg);
+	    }
+	    100%{
+	        left:0;
+	        background-color: deepskyblue;
+	        transform: rotate(-360deg);
+	    }
+	}
 </style>
 
 <div class="div-1">hover</div>
